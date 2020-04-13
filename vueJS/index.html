@@ -23,6 +23,14 @@
                 <p v-if="inStock" class="stock" style="background-color:#90EE90;">in stock</p>
                 <p v-else class="stock" style="background-color:#FF7F7F;">out of stock</p>
                  <!-- <p> {{ description }}</p> -->
+                <ul>
+                    <li v-for="detail in details"> {{ detail }}</li>
+                </ul>
+                <ul class="colors">
+                    <li>G</li>
+                    <li>R</li>
+                </ul>
+                
             </div>
         </div>
     </div>
