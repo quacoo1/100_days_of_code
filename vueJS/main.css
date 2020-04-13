@@ -28,3 +28,10 @@ img{
 .product-info{
     padding: 5rem;
 }
+
+.stock{
+    display: inline;
+    padding: 0 5px;
+    color: #222;
+    border-radius: 5px;
+}

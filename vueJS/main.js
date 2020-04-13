@@ -3,6 +3,7 @@ const app = new Vue ({
     data: {
         image: './light_blue.png',
         product: "LightSaber",
-        description: "May the force help you slice every Sith Head"
+        description: "May the force help you slice every Sith Head",
+        inStock: true,
     }
 })
