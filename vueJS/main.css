@@ -1,0 +1,30 @@
+html, body{
+    font-family: consolas;
+    background: #222;
+    color: white;
+    margin:0;
+}
+
+.nav{
+    width: 100%;
+    padding: 25px;
+    margin-bottom: 120px;
+    background:#000;
+}
+
+img{
+    width: 250px;
+}
+
+
+
+.product{
+    width: 720px;
+    margin:auto;
+    display: grid;
+    grid-template-columns: 250px auto;
+}
+
+.product-info{
+    padding: 5rem;
+}
