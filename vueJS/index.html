@@ -22,10 +22,22 @@
                 <h1> {{ product }}</h1>
                 <p v-if="inStock" class="stock" style="background-color:#90EE90;">in stock</p>
                 <p v-else class="stock" style="background-color:#FF7F7F;">out of stock</p>
-                 <!-- <p> {{ description }}</p> -->
+
+                 <ul class="colors throw">
+                    <li v-for="variant in variants" v-on:mouseover="updateImage(variant.variantImage)" :key="variant.variantId"> {{ variant.variantColor }} </li>
+                </ul>
+
                 <ul>
                     <li v-for="detail in details"> {{ detail }}</li>
                 </ul>
+                 
+                <button v-on:click="addToCart"> add to cart </button>
+
+                <div class="cart">
+                    <p> Cart ({{ cart }})</p>
+                </div>
+                
+                
             </div>
         </div>
     </div>

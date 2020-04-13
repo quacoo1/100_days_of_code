@@ -7,9 +7,10 @@ html, body{
 
 .nav{
     width: 100%;
-    padding: 25px;
+    padding: 20px;
     margin-bottom: 120px;
-    background:#000;
+    background:	#1A1617;
+    text-align:center;
 }
 
 img{
@@ -32,6 +33,7 @@ ul{
 .product-image{
     background: #333;
     padding: 25px;
+    border: solid 1px #ccc;
     border-radius: 10px;
 }
 
@@ -50,6 +52,7 @@ ul{
     list-style: none;
     margin:0;
     padding: 0;
+    margin-top: 2em;
 }
 
 .colors li{
@@ -57,6 +60,10 @@ ul{
     border: solid 1px #555;
     float: left;
     padding: 3px 8px;
+}
+
+.colors li:hover{
+  cursor: pointer;
 }
 
 
@@ -69,3 +76,30 @@ ul{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
+button{
+    display: inline-b;
+    font-family: consolas;
+    background: #584b4f;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.cart{ display: inline-block; font-size:.8rem;}
+
+.throw:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+  * html .throw            { zoom: 1; } /* IE6 */
+  *:first-child+html .throw { zoom: 1; } /* IE7 */
