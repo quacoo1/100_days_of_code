@@ -6,7 +6,7 @@ const app = new Vue ({
         image: './light_blue.png',
         product: "LightSaber",
         description: "May the force help you slice every Sith Head",
-        inStock: true,
+        inStock: false,
         details:['10GW ion energy cell','4D emitter matrix','f/2 Flux aperture '],
         cart: 0,
 

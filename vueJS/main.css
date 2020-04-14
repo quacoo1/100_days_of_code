@@ -44,7 +44,7 @@ ul{
 .stock{
     display: inline;
     padding: 0 5px;
-    color: #222;
+    /* color: #222; */
     border-radius: 5px;
 }
 
@@ -78,7 +78,7 @@ ul{
 }
 
 button{
-    display: inline-b;
+    display: inline-block;
     font-family: consolas;
     background: #584b4f;
     border: none;
@@ -89,6 +89,15 @@ button{
 
 button:hover{
     cursor: pointer;
+}
+
+.disableButton{
+    border: solid 1px white;
+    background: none;
+}
+
+.disableButton:hover{
+   cursor: not-allowed;
 }
 
 .cart{ display: inline-block; font-size:.8rem;}
