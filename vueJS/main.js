@@ -9,6 +9,7 @@ const app = new Vue ({
         inStock: false,
         details:['10GW ion energy cell','4D emitter matrix','f/2 Flux aperture '],
         cart: 0,
+        brand: 'Republic',
 
         variants: [
             {
@@ -28,15 +29,23 @@ const app = new Vue ({
 
     methods: {
 
-        addToCart: function(){
+        addToCart(){
             this.cart++;
         },
 
-        updateImage: function(variantImage){
+        updateImage(variantImage){
             this.image = variantImage;
         },
 
 
+
+    },
+
+    computed:{
+
+        title(){
+            return `${this.brand} ${this.product}`
+        }
 
     },
 })
