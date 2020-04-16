@@ -24,7 +24,7 @@
                 <p v-else class="stock" >out of stock</p>
 
                  <ul class="colors throw">
-                    <li v-for="variant in variants" @mouseover="updateImage(variant.variantImage)" :key="variant.variantId" :style="{ backgroundColor: variant.variantColor }"> {{ variant.variantColor[0] }} </li>
+                    <li v-for="(variant,index) in variants" @mouseover="updateImage(index)" :key="variant.variantId" :style="{ backgroundColor: variant.variantColor }"> {{ variant.variantColor[0] }} </li>
                 </ul>
 
                 <ul>
