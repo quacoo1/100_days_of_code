@@ -9,9 +9,9 @@ Vue.component('product',{
 
             <div class="product-info">
                 <h1> {{ title }}</h1>
-                <p v-if="inStock" class="stock">in stock</p>
-                <p v-else class="stock" >out of stock</p>
-                <p> premium: {{ premium }} </p>
+                <p v-if="inStock" style="background:#00FFFF" class="stock">in stock</p>
+                <p v-else style="background:#ffdfbf" class="stock" >out of stock</p>
+                <p style="font-size:0.8em"> shipping: {{ shipping }} </p>
 
                 <ul class="colors throw">
                     <li v-for="(variant,index) in variants" @mouseover="updateImage(index)" :key="variant.variantId" :style="{ backgroundColor: variant.variantColor }"> {{ variant.variantColor[0] }} </li>
@@ -86,6 +86,14 @@ Vue.component('product',{
 
         inStock(){
             return this.variants[this.index].variantStock;
+        },
+
+        shipping(){
+            if (this.premium){
+                return 'free'
+            }else{
+                return '$2.99'
+            }
         }
 
     },
@@ -98,7 +106,7 @@ const app = new Vue ({
 
     data: {
 
-        premium: false,
+        premium: true,
 
     },
 })
