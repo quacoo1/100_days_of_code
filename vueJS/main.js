@@ -11,8 +11,9 @@ Vue.component('product',{
                 <h1> {{ title }}</h1>
                 <p v-if="inStock" class="stock">in stock</p>
                 <p v-else class="stock" >out of stock</p>
+                <p> premium: {{ premium }} </p>
 
-                 <ul class="colors throw">
+                <ul class="colors throw">
                     <li v-for="(variant,index) in variants" @mouseover="updateImage(index)" :key="variant.variantId" :style="{ backgroundColor: variant.variantColor }"> {{ variant.variantColor[0] }} </li>
                 </ul>
 
@@ -28,6 +29,13 @@ Vue.component('product',{
             </div>
         </div>
     `,
+    props:{
+        premium: {
+            type: Boolean,
+            required: true,
+        }
+    }
+    ,
 
     data(){
         return {
