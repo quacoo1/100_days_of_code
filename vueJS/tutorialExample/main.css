@@ -1,3 +1,6 @@
+/* *{
+    outline: solid 1px red;
+} */
 html, body{
     font-family: consolas;
     background: #222;
@@ -6,11 +9,20 @@ html, body{
 }
 
 .nav{
-    width: 100%;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     margin-bottom: 120px;
     background:	#1A1617;
-    text-align:center;
+}
+
+.nav div{
+    padding: 1em 1em;
+}
+.nav .cart{ 
+    background: #8DA399;
+    
+    /* margin:0 1em;  */
+    right: 0;
 }
 
 img{
@@ -24,10 +36,10 @@ ul{
 
 
 .product{
-    width: 720px;
+    max-width: 1080px;
     margin: 3em auto;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto 1fr;
 }
 
 .product-image{
@@ -35,10 +47,14 @@ ul{
     padding: 25px;
     border: solid 1px #ccc;
     border-radius: 10px;
-}
+}S
 
 .product-info{
     padding: 5rem;
+}
+
+.product-content{
+    margin: 4rem 0;
 }
 
 .stock{
@@ -78,14 +94,12 @@ ul{
 }
 
 button{
-    display: inline-block;
     font-family: consolas;
-    background: #584b4f;
+    font-size: 1.3rem;
+    background:#87A96B;
     border: none;
     color: white;
-    padding: 10px 15px;
-    border-radius: 20px;
-    border: solid 1px #584b4f;
+    padding: .8em 4em;
 }
 
 button:hover{
@@ -93,15 +107,13 @@ button:hover{
 }
 
 .disableButton{
-    border: solid 1px white;
-    background: none;
+    background: #8DA399;
+    opacity: .3;
 }
 
 .disableButton:hover{
    cursor: not-allowed;
 }
-
-.cart{ display: inline-block; font-size:.8rem;}
 
 .throw:after {
     visibility: hidden;

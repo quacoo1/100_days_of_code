@@ -9,23 +9,21 @@ Vue.component('product',{
 
             <div class="product-info">
                 <h1> {{ title }}</h1>
-                <p v-if="inStock" style="background:#00FFFF" class="stock">in stock</p>
-                <p v-else style="background:#ffdfbf" class="stock" >out of stock</p>
-                <p style="font-size:0.8em"> shipping: {{ shipping }} </p>
+                <div class="product-content">
+                    <div v-if="inStock" style="background:#00FFFF;opacity:.5" class="stock">in stock</div>
+                    <div v-else style="background:#ffdfbf;opacity:.5" class="stock" >out of stock</div>
+                    <p style="font-size:0.8em"> shipping: <b>{{ shipping }}</b> </p>
 
-                <ul class="colors throw">
-                    <li v-for="(variant,index) in variants" @mouseover="updateImage(index)" :key="variant.variantId" :style="{ backgroundColor: variant.variantColor }"> {{ variant.variantColor[0] }} </li>
-                </ul>
+                    <ul class="colors throw">
+                        <li v-for="(variant,index) in variants" @mouseover="updateImage(index)" :key="variant.variantId" style="opacity: .3"> {{ variant.variantColor }} </li>
+                    </ul>
 
-                <ul>
-                    <li v-for="detail in details"> {{ detail }}</li>
-                </ul>
+                    <ul>
+                        <li v-for="detail in details"> {{ detail }}</li>
+                    </ul>
+                </div>
                  
-                <button :disabled="!inStock" :class="{ disableButton: !inStock } " @click="addToCart()"> add to cart </button>
-
-                <div class="cart">
-                    <p> Cart ({{ cart }})</p>
-                </div> 
+                <button :disabled="!inStock" :class="{ disableButton: !inStock }"  @click="addToCart()"> add to cart 🛒 </button>
             </div>
         </div>
     `,
@@ -42,7 +40,6 @@ Vue.component('product',{
             product: "LightSaber",
             description: "May the force help you slice every Sith Head",
             details:['10GW ion energy cell','4D emitter matrix','f/2 Flux aperture '],
-            cart: 0,
             brand: 'Republic',
             index: 0,
 
@@ -66,7 +63,7 @@ Vue.component('product',{
     methods: {
 
         addToCart(){
-            this.cart++;
+            this.$emit('add-to-cart',this.variants[this.index].variantId);
         },
 
         updateImage(index){
@@ -106,7 +103,14 @@ const app = new Vue ({
 
     data: {
 
-        premium: true,
+        premium: false,
+        cart: [],
 
     },
+
+    methods: {
+        updateCart(id){
+             this.cart.push(id);
+        }
+    }
 })
