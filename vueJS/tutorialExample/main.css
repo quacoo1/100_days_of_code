@@ -34,10 +34,13 @@ ul{
 }
 
 
-
-.product{
+.product, .review{
     max-width: 1080px;
     margin: 3em auto;
+}
+
+
+.product{
     display: grid;
     grid-template-columns: auto 1fr;
 }
@@ -47,7 +50,7 @@ ul{
     padding: 25px;
     border: solid 1px #ccc;
     border-radius: 10px;
-}S
+}
 
 .product-info{
     padding: 5rem;
@@ -55,6 +58,54 @@ ul{
 
 .product-content{
     margin: 4rem 0;
+}
+
+.review{
+
+    color: #bbb;
+
+    /* font-size: .6rem; */
+}
+
+.review > div{
+    display:grid;
+    grid-template-columns: auto 1fr;
+}
+
+.review-info,.review-review{
+    margin: 0;
+    padding: 1em 2em;
+    margin: .5em 0;
+}
+
+
+.review-info{
+    background-color: #1A1617;
+    margin-left: 3em;
+}
+
+.review-name{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.review-rating{
+    font-size: .8em;
+    margin-top: .3em;
+}
+
+.review-review{
+    font-size: 1em; 
+    color: white;
+    background-color: #333; 
+    margin-right: 3em;
+}
+
+.review form{
+    display: inline-block;
+    border: solid 2px #bbb;
+    padding: 2em;
+    margin: 3em;
 }
 
 .stock{
@@ -93,12 +144,34 @@ ul{
     border-bottom-right-radius: 10px;
 }
 
-button{
+label {
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+  }​
+
+button, input[type=submit]{
     font-family: consolas;
-    font-size: 1.3rem;
     background:#87A96B;
     border: none;
     color: white;
+    padding: .8em 4em;
+}
+
+
+input,textarea,select{
+    padding: .8em .3em;
+    width: 20vw;
+}
+
+input[type=submit]{
+    margin-top:1em;
+}
+
+button{
+    border: none;
+    background:#87A96B;
+    font-size: 1.3rem;
     padding: .8em 4em;
 }
 
@@ -113,6 +186,10 @@ button:hover{
 
 .disableButton:hover{
    cursor: not-allowed;
+}
+
+.error{
+    color:lightsalmon;
 }
 
 .throw:after {

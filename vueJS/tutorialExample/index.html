@@ -18,6 +18,23 @@
         </div>
         
         <product :premium="premium" @add-to-cart="updateCart"></product>
+
+        <div class="review">
+            <h2>Reviews</h2>
+            <p v-if="!reviews.length">There are no reviews yet.</p>
+            
+                <div v-for="review in reviews">
+                    <div class="review-info">
+                        <div class="review-name">{{ review.name }}</div>
+                        <div class="review-rating">Rating: {{ review.rating }}</div>
+                    </div>
+                    <p class="review-review">{{ review.review }}</p>
+                </div>
+            
+            <product-review  @review-submitted="addReview"></product-review>
+        </div>
+
+        
         
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
