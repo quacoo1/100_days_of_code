@@ -90,7 +90,7 @@ ul{
 }
 
 .review-rating{
-    font-size: .8em;
+    font-size: .7em;
     margin-top: .3em;
 }
 
@@ -102,8 +102,8 @@ ul{
 }
 
 .review form{
-    display: inline-block;
-    border: solid 2px #bbb;
+    /* display: inline-block; */
+    /* border: solid 2px #bbb; */
     padding: 2em;
     margin: 3em;
 }

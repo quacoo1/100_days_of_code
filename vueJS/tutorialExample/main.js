@@ -168,6 +168,48 @@ Vue.component('product-review',{
     }
 });
 
+Vue.component('product-tabs',{
+    props:{
+        reviews:{
+            type: Array,
+            required: false
+        }
+    },
+
+    template:  
+    ` <div>
+    
+         <div class="review">
+            <span class="tab" v-for="(tab,index) in tabs" :key="index" @click="selectedTab = tab" :class=" { activeTab: selectedTab === tab }">
+                {{ tab }}
+            </span>
+            <div v-show="selectedTab === tabs[0]">
+                <p v-if="!reviews.length">There are no reviews yet.</p>
+                
+                <div v-for="review in reviews">
+                    <div class="review-info">
+                        <div class="review-name">{{ review.name }}</div>
+                        <div class="review-rating">Rating: {{ review.rating }}</div>
+                    </div>
+                        <p class="review-review">{{ review.review }}</p>
+                </div>
+             </div>
+
+             <product-review v-show="selectedTab === tabs[1] " @review-submitted="addReview"></product-review>
+        </div>
+
+
+
+    </div>`,
+    data(){
+        return{
+            tabs: ['Reviews','Make a Review'],
+            selectedTab: 'Reviews'
+            
+        }
+    }
+})
+
 const app = new Vue ({
     el: "#app",
 
