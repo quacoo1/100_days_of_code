@@ -1,3 +1,5 @@
+const eventBus = new Vue()
+
 Vue.component('product',{
 
     template:
@@ -101,7 +103,6 @@ Vue.component('product',{
 Vue.component('product-review',{
     template: `
          <form class="review-form" @submit.prevent="onSubmit">
-            <h3>leave a review</h3>
             <p>
                 <label for="name">Name:</label>
                 <input id="name" v-model="name" placeholder="name">
@@ -154,7 +155,7 @@ Vue.component('product-review',{
                   review: this.review,
                   rating: this.rating
                 }
-                this.$emit('review-submitted', productReview)
+                eventBus.$emit('review-submitted', productReview)
                 this.name = null;
                 this.review = null;
                 this.rating = null;
@@ -177,25 +178,23 @@ Vue.component('product-tabs',{
     },
 
     template:  
-    ` <div>
+    ` <div class="tabs">
     
          <div class="review">
-            <span class="tab" v-for="(tab,index) in tabs" :key="index" @click="selectedTab = tab" :class=" { activeTab: selectedTab === tab }">
-                {{ tab }}
-            </span>
+            <span class="tab" v-for="(tab,index) in tabs" :key="index" @click="selectedTab = tab" :class=" { activeTab: selectedTab === tab }">{{ tab }} </span>
             <div v-show="selectedTab === tabs[0]">
-                <p v-if="!reviews.length">There are no reviews yet.</p>
+                <p v-if="!reviews.length" style="margin-top:3em;color:#888">There are no reviews yet.</p>
                 
-                <div v-for="review in reviews">
+                <div class="reviews" v-for="review in reviews">
                     <div class="review-info">
                         <div class="review-name">{{ review.name }}</div>
                         <div class="review-rating">Rating: {{ review.rating }}</div>
                     </div>
-                        <p class="review-review">{{ review.review }}</p>
+                     <p class="review-review">{{ review.review }}</p>
                 </div>
-             </div>
+            </div>
 
-             <product-review v-show="selectedTab === tabs[1] " @review-submitted="addReview"></product-review>
+             <product-review v-show="selectedTab === tabs[1] "></product-review>
         </div>
 
 
@@ -222,11 +221,15 @@ const app = new Vue ({
     },
 
     methods:{
-        addReview(productReview) {
-            this.reviews.push(productReview)
-          },
+        
         updateCart(id){
              this.cart.push(id);
         }
+    },
+
+    mounted(){
+        eventBus.$on('review-submitted', productReview => {
+            this.reviews.push(productReview)
+          });
     }
 })

@@ -67,21 +67,38 @@ ul{
     /* font-size: .6rem; */
 }
 
-.review > div{
+.tabs{
+    margin-top: 10rem ;
+}
+
+.review > span{
+    color: #999;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+
+.reviews{
     display:grid;
     grid-template-columns: auto 1fr;
 }
 
+
+.review .activeTab{
+    color: white;
+    font-size: 1.6em;
+    font-weight: bold;
+    /* text-decoration: underline; */
+}
+
 .review-info,.review-review{
-    margin: 0;
     padding: 1em 2em;
-    margin: .5em 0;
+    margin: 3em 0;
 }
 
 
 .review-info{
     background-color: #1A1617;
-    margin-left: 3em;
 }
 
 .review-name{
@@ -104,7 +121,7 @@ ul{
 .review form{
     /* display: inline-block; */
     /* border: solid 2px #bbb; */
-    padding: 2em;
+    padding: 0 1em;
     margin: 3em;
 }
 
