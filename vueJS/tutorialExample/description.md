@@ -12,3 +12,7 @@
 
 # NOTE FOR COMPONENTS
 #  Since data is now a function that returns a data object, each component will definitely have its own data
+
+
+# Research
+# 1) Reactivity in vue
