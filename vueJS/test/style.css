@@ -1,0 +1,11 @@
+.button{
+    background-color: indigo;
+    border: gray solid 1px;
+    padding: 2em 4em;
+    border-radius: 2em;
+}
+
+input[type=text]{
+    border: gray solid 1px;
+    padding: 2em 4em;
+}
