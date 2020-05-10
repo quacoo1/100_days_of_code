@@ -1,0 +1,39 @@
+#app{
+    display: inline-block;
+}
+.input,.button{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    border: gray solid 1px;
+    padding: 1em 2em;
+    border-radius: 2em; 
+    margin: 1em 0;  
+}
+
+figure{
+    margin:0;
+}
+
+.button{
+    color: #fff;
+    background-color: indigo;
+}
+
+
+.button:hover{
+    cursor: pointer;
+}
+
+.input:hover{
+    cursor: text;
+}
+
+figure {
+    color: #444;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+figure *{
+    margin: .5em 0;
+}

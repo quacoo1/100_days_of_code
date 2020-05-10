@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youtube api</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app">
+        <button class="button" @click="searchQuery"> sad </button>
+        <div v-for="video in videos">
+            <iframe width="640" height="480" src="https://youtube.com/embed/L53gjP-TtGE" frameborder="0"></iframe></div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+
+</body>
+</html>
