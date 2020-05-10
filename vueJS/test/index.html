@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="loader.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="app"></div>
-
+    <div id="app">
+        <input type="number" @keyup.enter="generate" class="input" v-model:value="number">
+        <button class="button" @click="generate">generate</button>
+        <div>
+            <div v-if="load" class="loader">Loading...</div>
+            <figure v-else>
+                <img :src="images.url">
+                <figcaption>{{ discription }}</figcaption>
+            </figure>
+        </div>
+    </div>
+    
     
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
