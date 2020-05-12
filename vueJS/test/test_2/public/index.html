@@ -19,7 +19,7 @@
 
 
         <div class="emotion"> {{ emotion }} </div>
-        <div v-for="video in vidoes">
+        <div v-for="video in videos">
                 
             <div class="iframe-container">
                 <iframe :src=`https://youtube.com/embed/${video[0].id.videoId}` frameborder="0"></iframe>
