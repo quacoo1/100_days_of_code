@@ -1,0 +1,46 @@
+#app{
+    background-color: #FBDB14;
+    display: inline-block;
+    font-family: 'Lato', sans-serif;
+}
+.iframe-container{
+    width: 90%;
+    margin: 1.5em auto;
+}
+
+iframe{
+    width: 100%;
+}
+.emotion{
+    color: #F340AF;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 2em 0;
+    opacity: .5;
+}
+
+.button-container{
+    margin: 0 5em;
+}
+
+.button{
+    color: #FFFCEB;
+    background-color: #F340AF;
+    font-size: 1rem;
+    border: none;
+    padding: 1em 2em;
+    border-radius: 2em; 
+    margin: 1em 0;  
+    box-shadow:  0px 18px 40px -12px rgba(243, 64, 175, .5) ;
+}
+
+figure{
+    margin:0;
+}
+
+
+.button:hover{
+    cursor: pointer;
+}

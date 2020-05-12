@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youtube api</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="loader.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app">
+        <div class="button-container">
+            <button class="button" @click="searchQuery('sad')">sad</button>
+            <button class="button" @click="searchQuery('happy')">happy</button>
+            <button class="button" @click="searchQuery('angry')">angry</button>
+        </div>
+
+
+        <div class="emotion"> {{ emotion }} </div>
+        <div v-for="video in [1,2,3,4,5]">
+                
+            <div class="iframe-container">
+                <iframe :src=`https://youtube.com/embed/${video[0].id.videoId}` frameborder="0"></iframe>
+                <!-- <iframe src="https://www.youtube.com/embed/tLAZvESoVgI" frameborder="0"></iframe> -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+
+</body>
+</html>
